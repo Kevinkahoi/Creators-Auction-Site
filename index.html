@@ -75,6 +75,14 @@
 			}, {scope: 'email'});
 		}
 		
+		FB.api('/me', { fields: 'id, name, email' }, function(response) 
+                    {
+    var userInfo = document.getElementById('user-info');
+    userInfo.innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + response.name ;
+
+                  });
+		
+		
 		// getting basic user info
 		function getInfo() {
 			FB.api('1323522891145808', 'GET', {fields:'name,id,picture.width(150).height(150)'},
