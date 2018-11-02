@@ -51,7 +51,7 @@
 		
 		// getting basic user info
 		function getInfo() {
-			FB.api('/me', 'GET', {fields: 'name,id,picture.width(150).height(150)'},
+			FB.api('/me', 'GET', {fields:'name,id'},
 			       function(response) {
 				document.getElementById('status').innerHTML = "<img src='" + response.picture.data.url + "'>";
 			});
